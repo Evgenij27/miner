@@ -4,25 +4,9 @@ import java.io.IOException;
 
 public class Recursion {
 
-    /*static int[][] mine = {
-            {1,3,1,5},
-            {2,2,4,1},
-            {5,0,2,3},
-            {0,6,1,2}};*/
-
-    /*static int[][] mine = {
-            {10,33,13,15},
-            {22,21,4,1},
-            {5,0,2,3},
-            {0,6,14,2}
-    };*/
-
     static int rows;
-
     static int cols;
-
     static int[][] mine;
-
 
     public static void main(String[] args) throws IOException {
         if (args.length == 0) {
