@@ -2,20 +2,20 @@ package main;
 
 import static main.Utils.*;
 
-public class IterationSolution {
+public class IterationSolver {
 
     private final int rows;
     private final int cols;
 
     private final int[][] mine;
 
-    public IterationSolution(int[][] mine) {
+    public IterationSolver(int[][] mine) {
         this.mine = mine;
         this.rows = getRows(mine);
         this.cols = getCols(mine);
     }
 
-    public int findResult(int startRow) {
+    public int solve(int startRow) {
         int row = startRow;
         int sum = mine[row][0];
         for (int col = 1; col < cols; col++) {
