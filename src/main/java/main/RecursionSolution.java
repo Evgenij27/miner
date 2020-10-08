@@ -2,7 +2,7 @@ package main;
 
 import java.io.IOException;
 
-public class Recursion {
+public class RecursionSolution {
 
     static int rows;
     static int cols;
