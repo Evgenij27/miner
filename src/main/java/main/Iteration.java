@@ -24,42 +24,42 @@ public class Iteration {
         int row = data.getStartRow();
 
         int sum = mine[row][0];
-        for (int col = 1; col < getCols(mine); col++) {
+        for (int col = 1; col < cols; col++) {
 
-                int u;
-                int r;
-                int d;
+                int up;
+                int right;
+                int down;
 
                 if (row == 0) {
-                    r = mine[row][col];
-                    d = mine[row + 1][col];
-                    if (d > r) {
+                    right = mine[row][col];
+                    down = mine[row + 1][col];
+                    if (down > right) {
                         row = row + 1;
                     }
-                    sum += Math.max(r,d);
+                    sum += Math.max(right,down);
                     continue;
                 }
 
                 if (row == rows - 1) {
-                    u = mine[row - 1][col];
-                    r = mine[row][col];
-                    if (u > r) {
+                    up = mine[row - 1][col];
+                    right = mine[row][col];
+                    if (up > right) {
                         row = row - 1;
                     }
-                    sum += Math.max(u,r);
+                    sum += Math.max(up,right);
                     continue;
                 }
 
-                u = mine[row - 1][col];
-                r = mine[row][col];
-                d = mine[row + 1][col];
+                up = mine[row - 1][col];
+                right = mine[row][col];
+                down = mine[row + 1][col];
 
-                if (u > r && u > d) {
+                if (up > right && up > down) {
                     row = row - 1;
-                } else if (d > u && d > r) {
+                } else if (down > up && down > right) {
                     row = row + 1;
                 }
-                sum += max(u, r, d);
+                sum += max(up, right, down);
         }
 
         System.out.println(sum);
